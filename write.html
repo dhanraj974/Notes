@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>E-Book Study · Write</title>
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="write-page-body">
+
+<!-- ============================== -->
+<!--  PAGE: WRITE (Notebook)       -->
+<!-- ============================== -->
+
+<!-- Toast -->
+<div id="toast" class="toast hidden">
+    <i class="fas fa-check-circle"></i> Note Saved
+</div>
+
+<!-- Header -->
+<header class="write-header">
+    <div class="write-header-title">
+        <i class="fas fa-feather-alt"></i> Notes
+    </div>
+    <div class="write-header-info">
+        <span class="info-item"><i class="fas fa-folder"></i> 
+            <select id="note-category" style="background: transparent; border: none; color: white; font-size: 1rem; font-weight: 500; cursor: pointer;">
+                <option value="general" style="color: #1e293b;">General</option>
+                <option value="java" style="color: #1e293b;">Java</option>
+            </select>
+        </span>
+        <span class="info-item"><i class="fas fa-file-word"></i> <span id="word-counter">0</span> words</span>
+        <span class="info-item"><i class="fas fa-font"></i> <span id="char-counter">0</span> chars</span>
+        <span class="info-item"><i class="far fa-clock"></i> <span id="last-saved">Never</span></span>
+        <span class="info-item unsaved-badge hidden" id="unsaved-indicator"><i class="fas fa-circle"></i> Unsaved</span>
+    </div>
+    <div class="write-header-buttons">
+        <button class="btn btn-outline-light btn-sm" id="download-btn"><i class="fas fa-download"></i> Download</button>
+        <button class="btn btn-outline-light btn-sm" id="print-btn"><i class="fas fa-print"></i> Print</button>
+        <button class="btn btn-danger btn-sm" id="delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>
+        <button class="btn btn-primary btn-sm" id="save-btn"><i class="fas fa-save"></i> Save</button>
+    </div>
+</header>
+
+<!-- Editor -->
+<div class="notebook-container">
+    <input type="text" id="note-title" class="note-title-input" placeholder="Note title (filename)…" />
+    <div id="editor" class="writing-area" contenteditable="true" spellcheck="false"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
